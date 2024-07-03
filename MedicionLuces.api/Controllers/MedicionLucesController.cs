@@ -9,8 +9,7 @@ namespace MedicionLuces.api.Controllers
     [ApiController]
     public class MedicionLucesController : ControllerBase
     {
-        private readonly 
-            IMedicionLucesService _mediicionLucesService;
+        private readonly IMedicionLucesService _mediicionLucesService;
 
         public MedicionLucesController(IMedicionLucesService mediicionLucesService)
         {

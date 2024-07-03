@@ -10,8 +10,8 @@ namespace Api.service
     public class MedicionLucesService : IMedicionLucesService
     {
         private readonly IPatronLucesService _patronLucesService;
-        public List<string> LucesConMedicionRequerida { get; } = new List<string>();
-        public List<string> LucesConMedicionNoRequerida { get; } = new List<string>();
+        public IList<string> LucesConMedicionRequerida { get; } = new List<string>();
+        public IList<string> LucesConMedicionNoRequerida { get; } = new List<string>();
 
         public MedicionLucesService(IPatronLucesService patronLucesService)
         {
