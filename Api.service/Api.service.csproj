@@ -6,6 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+    <ItemGroup>
+	    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    </ItemGroup>
+	
   <ItemGroup>
     <ProjectReference Include="..\Api.Interfaces\Api.Interfaces.csproj" />
     <ProjectReference Include="..\Entidades\Api.Entidades.csproj" />

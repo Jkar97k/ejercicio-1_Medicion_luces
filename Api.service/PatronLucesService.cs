@@ -11,22 +11,17 @@ namespace Api.service
     {
         private static PatronLuces _patronLuces = new PatronLuces();
 
-        public int ConfiguracionLuces(PatronLuces patron)
+        public bool ConfiguracionLuces(PatronLuces patron)
         {
             try
             {
-                if (patron == null) return 0;
-
                 _patronLuces = patron;
-
-                return 1;
+                return true; 
             }
-            catch (Exception e)
+            catch 
             {
-                return -1;
+                return false; 
             }
-
-
         }
 
         public PatronLuces ObtenerConfiguracion()

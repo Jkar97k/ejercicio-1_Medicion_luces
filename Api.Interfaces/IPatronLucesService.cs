@@ -4,7 +4,7 @@ namespace Api.service
 {
     public interface IPatronLucesService
     {
-        int ConfiguracionLuces(PatronLuces patron);
+        bool ConfiguracionLuces(PatronLuces patron);
         PatronLuces ObtenerConfiguracion();
     }
 }

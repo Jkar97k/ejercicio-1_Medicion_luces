@@ -19,17 +19,28 @@ namespace MedicionLuces.api.Controllers
         [HttpGet("Get")]
         public IActionResult VerConfiguracion()
         {
-            return Ok(new { Resultado = _patronLucesService.ObtenerConfiguracion() });
+            var configuracion = _patronLucesService.ObtenerConfiguracion();
+            return Ok(new { Resultado = configuracion });
         }
 
         [HttpPost("NuevaConfig")]
-        public IActionResult NuevaConfiguracion([FromBody] PatronLuces Patron)
+        public IActionResult NuevaConfiguracion([FromBody] PatronLuces patron)
         {
-            var result = _patronLucesService.ConfiguracionLuces(Patron);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-            if (result == 0) { return BadRequest("Configuracion Erronea");}
+            var resultado = _patronLucesService.ConfiguracionLuces(patron);
 
-            return Ok("Configuracion Correcta");
+            if (resultado)
+            {
+                return Ok(new { Message = "Configuración exitosa" });
+            }
+            else
+            {
+                return StatusCode(500, new { Message = "Error al configurar las luces" });
+            }
         }
     }
 }

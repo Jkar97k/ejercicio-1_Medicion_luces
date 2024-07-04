@@ -1,4 +1,5 @@
 ﻿using Api.Entidades;
+using Api.Interfaces;
 using Api.service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ namespace MedicionLuces.api.Controllers
     public class MedicionLucesController : ControllerBase
     {
         private readonly IMedicionLucesService _mediicionLucesService;
+        
 
         public MedicionLucesController(IMedicionLucesService mediicionLucesService)
         {
