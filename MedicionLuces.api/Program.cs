@@ -4,6 +4,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 Api_BusinessLogic.ReglasService(builder.Services);
+Api_BusinessLogic.ValidacionesService(builder.Services);
+Api_BusinessLogic.LoggerService(builder.Services);
 
 
 builder.Services.AddEndpointsApiExplorer();

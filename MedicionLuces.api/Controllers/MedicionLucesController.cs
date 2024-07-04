@@ -19,6 +19,10 @@ namespace MedicionLuces.api.Controllers
         [HttpPost("Medicion")]
         public IActionResult Muestra([FromBody] MedicionLuz medida )
         {
+            if (!ModelState.IsValid) 
+            {
+                return BadRequest(ModelState);
+            }
             var respuesta = _mediicionLucesService.Validacion(medida);
 
             return Ok(respuesta);
